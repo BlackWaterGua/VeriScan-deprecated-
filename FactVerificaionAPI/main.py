@@ -5,7 +5,7 @@ from QueryGeneration.QueryGenerator import QueryGenerator
 import re
 from SentenceBert.SentenceBert import get_similar_sentence
 from Prompt.P_tuning_v1 import P_tuning_v1
-
+from crawlerAPI import url_to_text
 # uvicorn main:app --host 0.0.0.0 --port 80
 app = FastAPI()
 
