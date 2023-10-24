@@ -17,8 +17,8 @@ def url_to_text(url):
     soup = BeautifulSoup(web.content, 'html.parser')
     text = soup.get_text().replace(' ','')
     dr = re.compile(r'(\\t)+(\\n)*|(\\t)*(\\n)+')
-    text = dr.sub(',',text)
-    dr = re.compile(',+')
-    text = dr.sub(',',text)
+    text = dr.sub('.',text)
+    dr = re.compile('[.]+')
+    text = dr.sub('.',text)
 
     return text
