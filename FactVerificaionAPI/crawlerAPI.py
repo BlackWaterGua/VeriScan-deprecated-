@@ -15,10 +15,10 @@ def url_to_text(url):
     web = requests.post("http://140.115.54.45:6789/post/crawler/static/html", json=JSON)
     # filter the content of return string
     soup = BeautifulSoup(web.content, 'html.parser')
-    text = soup.get_text().replace(' ','')
+    text = soup.get_text()
     dr = re.compile(r'(\\t)+(\\n)*|(\\t)*(\\n)+')
-    text = dr.sub(',',text)
-    dr = re.compile(',+')
-    text = dr.sub(',',text)
+    text = dr.sub('.',text)
+    dr = re.compile('[.]+')
+    text = dr.sub('.',text)
 
     return text
